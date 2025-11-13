@@ -1,367 +1,182 @@
-# Editor de Texto Avanzado - Seccion C - Python Tkinter
+# Editor de Texto Avanzado - Sección C - Python Tkinter
 
-A professional text editor built with Python and Tkinter, featuring a modular architecture with full UTF-8 support.
+Un editor de texto profesional construido con Python y Tkinter, con una arquitectura modular y soporte completo para UTF-8.
 
-## 📋 Features
+## 📋 Características
 
-- ✨ Open, edit and save multiple file types (.txt, .py, .cpp, .cs, etc.)
-- 🔄 Unlimited undo/redo system
-- 🔍 Advanced search with match highlighting
-- 📝 Full text editing capabilities (copy, cut, paste, select all)
-- 💾 Automatic backup creation (.bak files)
-- 🌐 Multiple encoding support (UTF-8, Latin-1, UTF-16)
-- 🔔 Change detection with save prompts
-- 📊 Status bar with line/column position
-- 🐛 Robust error handling with logging
-- 🌍 Full UTF-8 support (accents, special characters, etc.)
+- ✨ Abrir, editar y guardar múltiples tipos de archivo (.txt, .py, .cpp, .cs, etc.)
+- 🔄 Sistema ilimitado de deshacer/rehacer
+- 🔍 Búsqueda avanzada con resaltado de coincidencias
+- 📝 Capacidades completas de edición de texto (copiar, cortar, pegar, seleccionar todo)
+- 💾 Creación automática de respaldos (archivos .bak)
+- 🌐 Soporte para múltiples codificaciones (UTF-8, Latin-1, UTF-16)
+- 🔔 Detección de cambios con avisos para guardar
+- 📊 Barra de estado con posición de línea/columna
+- 🐛 Manejo robusto de errores con registro
+- 🌍 Soporte completo para UTF-8 (acentos, caracteres especiales, etc.)
 
-## 📁 Project Structure
-
+## 📁 Estructura del Proyecto
 ```
 text-editor/
-├── main.py                 # Application entry point
-├── text_editor.py          # Main TextEditor class
-├── logger_config.py        # Logging configuration
-├── error_handler.py        # Error handling and logging
-├── menu_manager.py         # Menu creation and management
-├── file_operations.py      # File operations (open, save, new)
-├── edit_operations.py      # Edit operations (undo, redo, copy, cut, paste)
-├── search_operations.py    # Search functionality
-├── dialog_manager.py       # Information dialogs
-└── README.md              # This file
+├── main.py                 # Punto de entrada de la aplicación
+├── text_editor.py          # Clase principal TextEditor
+├── logger_config.py        # Configuración de registro
+├── error_handler.py        # Manejo y registro de errores
+├── menu_manager.py         # Creación y gestión de menús
+├── file_operations.py      # Operaciones de archivo (abrir, guardar, nuevo)
+├── edit_operations.py      # Operaciones de edición (deshacer, rehacer, copiar, cortar, pegar)
+├── search_operations.py    # Funcionalidad de búsqueda
+├── dialog_manager.py       # Diálogos de información
+└── README.md              # Este archivo
 ```
 
-## 🚀 Installation
+## 🚀 Instalación
 
-### Prerequisites
-- Python 3.6 or higher
-- tkinter (usually comes with Python)
+### Requisitos Previos
+- Python 3.6 o superior
+- tkinter (usualmente viene con Python)
 
-### Running the Application
+### Ejecutar la Aplicación
 
-1. Clone or download this repository
-2. Navigate to the project directory
-3. Run the main file:
-
+1. Clonar o descargar este repositorio
+2. Navegar al directorio del proyecto
+3. Ejecutar el archivo principal:
 ```bash
 python main.py
 ```
 
-## 📖 Usage
+## 📖 Uso
 
-### Keyboard Shortcuts
+### Atajos de Teclado
 
-- `Ctrl+N` - New file
-- `Ctrl+O` - Open file
-- `Ctrl+S` - Save file
-- `Ctrl+Shift+S` - Save as
-- `Ctrl+F` - Search
-- `Ctrl+Z` - Undo
-- `Ctrl+Y` - Redo
-- `Ctrl+C` - Copy
-- `Ctrl+X` - Cut
-- `Ctrl+V` - Paste
-- `Ctrl+A` - Select all
+- `Ctrl+N` - Nuevo archivo
+- `Ctrl+O` - Abrir archivo
+- `Ctrl+S` - Guardar archivo
+- `Ctrl+Shift+S` - Guardar como
+- `Ctrl+F` - Buscar
+- `Ctrl+Z` - Deshacer
+- `Ctrl+Y` - Rehacer
+- `Ctrl+C` - Copiar
+- `Ctrl+X` - Cortar
+- `Ctrl+V` - Pegar
+- `Ctrl+A` - Seleccionar todo
 
-### Menus
+### Menús
 
-#### File Menu
-- **New**: Create a new empty file
-- **Open**: Open an existing file
-- **Save**: Save current file
-- **Save As**: Save with a new name/extension
-- **Search**: Find text in the document
-- **Exit**: Close the application
+#### Menú Archivo
+- **Nuevo**: Crear un nuevo archivo vacío
+- **Abrir**: Abrir un archivo existente
+- **Guardar**: Guardar el archivo actual
+- **Guardar Como**: Guardar con un nuevo nombre/extensión
+- **Buscar**: Encontrar texto en el documento
+- **Salir**: Cerrar la aplicación
 
-#### Edit Menu
-- **Undo**: Undo last action
-- **Redo**: Redo last undone action
-- **Copy**: Copy selected text
-- **Cut**: Cut selected text
-- **Paste**: Paste from clipboard
-- **Select All**: Select all text
+#### Menú Editar
+- **Deshacer**: Deshacer la última acción
+- **Rehacer**: Rehacer la última acción deshecha
+- **Copiar**: Copiar el texto seleccionado
+- **Cortar**: Cortar el texto seleccionado
+- **Pegar**: Pegar desde el portapapeles
+- **Seleccionar Todo**: Seleccionar todo el texto
 
-#### Encoding Menu
-- Change file encoding (UTF-8, Latin-1, UTF-16)
+#### Menú Codificación
+- Cambiar la codificación del archivo (UTF-8, Latin-1, UTF-16)
 
-#### Help Menu
-- **Information**: About the application
-- **User Manual**: Open documentation
-- **Members**: View development team information
+#### Menú Ayuda
+- **Información**: Acerca de la aplicación
+- **Manual de Usuario**: Abrir la documentación
+- **Miembros**: Ver información del equipo de desarrollo
 
-## 🔧 Module Descriptions
-
-### main.py
-Entry point of the application. Initializes logging and creates the main window.
-
-### text_editor.py
-Main class containing the text editor logic. Manages the text widget, status bar, and coordinates all operations.
-
-### logger_config.py
-Configures the logging system for error tracking and debugging.
-
-### error_handler.py
-Centralized error handling with user-friendly messages and detailed logging.
-
-### menu_manager.py
-Creates and manages all application menus and keyboard shortcuts.
-
-### file_operations.py
-Handles all file-related operations:
-- Opening files with automatic encoding detection
-- Saving files with backup creation
-- Creating new files
-- Managing unsaved changes
-
-### edit_operations.py
-Manages text editing operations:
-- Undo/redo functionality
-- Clipboard operations (copy, cut, paste)
-- Text selection
-
-### search_operations.py
-Provides search functionality:
-- Case-sensitive/insensitive search
-- Match highlighting
-- Match counting and navigation
-
-### dialog_manager.py
-Manages information dialogs:
-- Application information
-- User manual access
-- Team member information
-
-## 🌐 UTF-8 Support
-
-This editor fully supports UTF-8 encoding, allowing you to work with:
-- Spanish characters (á, é, í, ó, ú, ñ, ¿, ¡)
-- Special symbols and diacritics
-- Multiple language scripts
-- Extended Unicode characters
-
-## 📝 Logging
-
-The application creates an `editor_errors.log` file that records:
-- Application startup and shutdown
-- File operations (open, save)
-- Errors and exceptions
-- Debug information
-
-## 👥 Authors
-
-**Universidad Mariano Gálvez de Guatemala**  
-Course: Algoritmos - Section C  
-Year: 2025
-
-### Team Members
-- Marlon Hernández - ID: 7690-25-19080
-- Pamela Alvarado - ID: [Add]
-- Anderson Palma - ID: [Add]
-
-## 📄 License
-
-GPL v3.0 - See LICENSE file for details
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests.
-
-## 🐛 Known Issues
-
-- None at the moment
-
-## 🔮 Future Enhancements
-
-- Syntax highlighting for different programming languages
-- Line numbers
-- Multiple tabs support
-- Find and replace functionality
-- Print support
-- Theme customization
-
-## 📞 Support
-
-For issues or questions, please check the log file (`editor_errors.log`) or contact the development team.# Advanced Text Editor - Python Tkinter
-
-A professional text editor built with Python and Tkinter, featuring a modular architecture with full UTF-8 support.
-
-## 📋 Features
-
-- ✨ Open, edit and save multiple file types (.txt, .py, .cpp, .cs, etc.)
-- 🔄 Unlimited undo/redo system
-- 🔍 Advanced search with match highlighting
-- 📝 Full text editing capabilities (copy, cut, paste, select all)
-- 💾 Automatic backup creation (.bak files)
-- 🌐 Multiple encoding support (UTF-8, Latin-1, UTF-16)
-- 🔔 Change detection with save prompts
-- 📊 Status bar with line/column position
-- 🐛 Robust error handling with logging
-- 🌍 Full UTF-8 support (accents, special characters, etc.)
-
-## 📁 Project Structure
-
-```
-text-editor/
-├── main.py                 # Application entry point
-├── text_editor.py          # Main TextEditor class
-├── logger_config.py        # Logging configuration
-├── error_handler.py        # Error handling and logging
-├── menu_manager.py         # Menu creation and management
-├── file_operations.py      # File operations (open, save, new)
-├── edit_operations.py      # Edit operations (undo, redo, copy, cut, paste)
-├── search_operations.py    # Search functionality
-├── dialog_manager.py       # Information dialogs
-└── README.md              # This file
-```
-
-## 🚀 Installation
-
-### Prerequisites
-- Python 3.6 or higher
-- tkinter (usually comes with Python)
-
-### Running the Application
-
-1. Clone or download this repository
-2. Navigate to the project directory
-3. Run the main file:
-
-```bash
-python main.py
-```
-
-## 📖 Usage
-
-### Keyboard Shortcuts
-
-- `Ctrl+N` - New file
-- `Ctrl+O` - Open file
-- `Ctrl+S` - Save file
-- `Ctrl+Shift+S` - Save as
-- `Ctrl+F` - Search
-- `Ctrl+Z` - Undo
-- `Ctrl+Y` - Redo
-- `Ctrl+C` - Copy
-- `Ctrl+X` - Cut
-- `Ctrl+V` - Paste
-- `Ctrl+A` - Select all
-
-### Menus
-
-#### File Menu
-- **New**: Create a new empty file
-- **Open**: Open an existing file
-- **Save**: Save current file
-- **Save As**: Save with a new name/extension
-- **Search**: Find text in the document
-- **Exit**: Close the application
-
-#### Edit Menu
-- **Undo**: Undo last action
-- **Redo**: Redo last undone action
-- **Copy**: Copy selected text
-- **Cut**: Cut selected text
-- **Paste**: Paste from clipboard
-- **Select All**: Select all text
-
-#### Encoding Menu
-- Change file encoding (UTF-8, Latin-1, UTF-16)
-
-#### Help Menu
-- **Information**: About the application
-- **User Manual**: Open documentation
-- **Members**: View development team information
-
-## 🔧 Module Descriptions
+## 🔧 Descripción de Módulos
 
 ### main.py
-Entry point of the application. Initializes logging and creates the main window.
+Punto de entrada de la aplicación. Inicializa el registro y crea la ventana principal.
 
 ### text_editor.py
-Main class containing the text editor logic. Manages the text widget, status bar, and coordinates all operations.
+Clase principal que contiene la lógica del editor de texto. Gestiona el widget de texto, la barra de estado y coordina todas las operaciones.
 
 ### logger_config.py
-Configures the logging system for error tracking and debugging.
+Configura el sistema de registro para el seguimiento y depuración de errores.
 
 ### error_handler.py
-Centralized error handling with user-friendly messages and detailed logging.
+Manejo centralizado de errores con mensajes amigables para el usuario y registro detallado.
 
 ### menu_manager.py
-Creates and manages all application menus and keyboard shortcuts.
+Crea y gestiona todos los menús de la aplicación y los atajos de teclado.
 
 ### file_operations.py
-Handles all file-related operations:
-- Opening files with automatic encoding detection
-- Saving files with backup creation
-- Creating new files
-- Managing unsaved changes
+Maneja todas las operaciones relacionadas con archivos:
+- Abrir archivos con detección automática de codificación
+- Guardar archivos con creación de respaldo
+- Crear nuevos archivos
+- Gestionar cambios no guardados
 
 ### edit_operations.py
-Manages text editing operations:
-- Undo/redo functionality
-- Clipboard operations (copy, cut, paste)
-- Text selection
+Gestiona las operaciones de edición de texto:
+- Funcionalidad de deshacer/rehacer
+- Operaciones de portapapeles (copiar, cortar, pegar)
+- Selección de texto
 
 ### search_operations.py
-Provides search functionality:
-- Case-sensitive/insensitive search
-- Match highlighting
-- Match counting and navigation
+Proporciona funcionalidad de búsqueda:
+- Búsqueda sensible/insensible a mayúsculas
+- Resaltado de coincidencias
+- Conteo y navegación de coincidencias
 
 ### dialog_manager.py
-Manages information dialogs:
-- Application information
-- User manual access
-- Team member information
+Gestiona los diálogos de información:
+- Información de la aplicación
+- Acceso al manual de usuario
+- Información de los miembros del equipo
 
-## 🌐 UTF-8 Support
+## 🌐 Soporte UTF-8
 
-This editor fully supports UTF-8 encoding, allowing you to work with:
-- Spanish characters (á, é, í, ó, ú, ñ, ¿, ¡)
-- Special symbols and diacritics
-- Multiple language scripts
-- Extended Unicode characters
+Este editor soporta completamente la codificación UTF-8, permitiéndote trabajar con:
+- Caracteres españoles (á, é, í, ó, ú, ñ, ¿, ¡)
+- Símbolos especiales y diacríticos
+- Múltiples sistemas de escritura
+- Caracteres Unicode extendidos
 
-## 📝 Logging
+## 📝 Registro
 
-The application creates an `editor_errors.log` file that records:
-- Application startup and shutdown
-- File operations (open, save)
-- Errors and exceptions
-- Debug information
+La aplicación crea un archivo `editor_errors.log` que registra:
+- Inicio y cierre de la aplicación
+- Operaciones de archivo (abrir, guardar)
+- Errores y excepciones
+- Información de depuración
 
-## 👥 Authors
+## 👥 Autores
 
 **Universidad Mariano Gálvez de Guatemala**  
-Course: Algoritmos - Section C  
-Year: 2025
+Curso: Algoritmos - Sección C  
+Año: 2025
 
-### Team Members
-- Marlon Hernández - ID: 7690-25-19080
-- Pamela Alvarado - ID: [Add]
-- Anderson Palma - ID: [Add]
+### Miembros del Equipo
+- Marlon Hernández - Carné: 7690-25-19080
+- Pamela Alvarado - Carné: 7690-25-16439
+- Anderson Palma - Carné: 7690-25-2440
 
-## 📄 License
+## 📄 Licencia
 
-GPL v3.0 - See LICENSE file for details
+GPL v3.0 - Ver el archivo LICENSE para más detalles
 
-## 🤝 Contributing
+## 🤝 Contribuciones
 
-Contributions are welcome! Please feel free to submit issues or pull requests.
+¡Las contribuciones son bienvenidas! No dudes en enviar issues o pull requests.
 
-## 🐛 Known Issues
+## 🐛 Problemas Conocidos
 
-- None at the moment
+- Ninguno por el momento
 
-## 🔮 Future Enhancements
+## 🔮 Mejoras Futuras
 
-- Syntax highlighting for different programming languages
-- Line numbers
-- Multiple tabs support
-- Find and replace functionality
-- Print support
-- Theme customization
+- Resaltado de sintaxis para diferentes lenguajes de programación
+- Números de línea
+- Soporte para múltiples pestañas
+- Funcionalidad de buscar y reemplazar
+- Soporte de impresión
+- Personalización de temas
 
-## 📞 Support
+## 📞 Soporte
 
-For issues or questions, please check the log file (`editor_errors.log`) or contact the development team.
+Para problemas o preguntas, por favor revisa el archivo de registro (`editor_errors.log`) o contacta al equipo de desarrollo.
